@@ -39,7 +39,7 @@ public class Attacker : MonoBehaviour
 
             if (attackedObject.GetComponent<Attackable>())
             {
-                attackedObject.GetComponent<Attackable>().ReceiveAttack();
+                attackedObject.GetComponent<Attackable>().ReceiveAttack(attackDirection, hurt);
             }
         }
     }

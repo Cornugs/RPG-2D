@@ -41,8 +41,13 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         // Movement
-        Vector2 vectorVelocity = new Vector2(axisX, axisY) * attributesKnight.speed;
-        myRigidBody2D.velocity = vectorVelocity;
+        if (myAnimator.GetBool(attackingHashCode))
+        {
+            myRigidBody2D.velocity = Vector2.zero;
+        } else {
+            Vector2 vectorVelocity = new Vector2(axisX, axisY) * attributesKnight.speed;
+            myRigidBody2D.velocity = vectorVelocity;
+        }
     }
 
     // Update is called once per frame in GameLogic
@@ -63,8 +68,7 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetButtonDown("Attack"))
         {
-            attacker.Attack(inputKnight.lookDirection, attributesKnight.attack);
-            myAnimator.SetTrigger(attackingHashCode);
+            myAnimator.SetBool(attackingHashCode, true);
         }
     }
 
@@ -84,6 +88,12 @@ public class PlayerController : MonoBehaviour
     {
         myAnimator.SetFloat(xHashCode, axisX);
         myAnimator.SetFloat(yHashCode, axisY);
+    }
+
+    private void AttackController()
+    {
+        attacker.Attack(inputKnight.lookDirection, attributesKnight.attack);
+        myAnimator.SetBool(attackingHashCode, false);
     }
 
 }
