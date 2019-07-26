@@ -2,16 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Attributes))]
-
 public class PlayerController : MonoBehaviour
 {
-    private InputKnight inputKnight;
+    private InputPlayer inputPlayer;
     private Transform transformed;
     private Rigidbody2D myRigidBody2D;
     private Animator myAnimator;
     private SpriteRenderer mySprite;
-    private Attributes attributesKnight;
+    public Attribute attributesPlayer;
     private Attacker attacker;
 
     private float axisX;
@@ -25,8 +23,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         attacker = GetComponent<Attacker>();
-        attributesKnight = GetComponent<Attributes>();
-        inputKnight = GetComponent<InputKnight>();
+        inputPlayer = GetComponent<InputPlayer>();
         transformed = GetComponent<Transform>();
         myRigidBody2D = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
@@ -45,7 +42,7 @@ public class PlayerController : MonoBehaviour
         {
             myRigidBody2D.velocity = Vector2.zero;
         } else {
-            Vector2 vectorVelocity = new Vector2(axisX, axisY) * attributesKnight.speed;
+            Vector2 vectorVelocity = new Vector2(axisX, axisY) * attributesPlayer.speed;
             myRigidBody2D.velocity = vectorVelocity;
         }
     }
@@ -53,8 +50,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame in GameLogic
     private void Update()
     {
-        axisX = inputKnight.horizontalAxis;
-        axisY = inputKnight.verticalAxis;
+        axisX = inputPlayer.horizontalAxis;
+        axisY = inputPlayer.verticalAxis;
 
         //FlipSprite();
 
@@ -92,7 +89,7 @@ public class PlayerController : MonoBehaviour
 
     private void AttackController()
     {
-        attacker.Attack(inputKnight.lookDirection, attributesKnight.attack);
+        attacker.Attack(inputPlayer.lookDirection, attributesPlayer.attack);
         myAnimator.SetBool(attackingHashCode, false);
     }
 

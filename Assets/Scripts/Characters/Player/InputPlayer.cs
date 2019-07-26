@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputKnight : MonoBehaviour
+public class InputPlayer : MonoBehaviour
 {
     public float verticalAxis { get; private set; }
     public float horizontalAxis { get; private set; }

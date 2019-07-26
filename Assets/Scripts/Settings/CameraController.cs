@@ -11,8 +11,8 @@ public class CameraController : MonoBehaviour
     private void Start() 
     {
         vc = GetComponent<CinemachineVirtualCamera>();
-        Transform knight = GameManager.instance.knight.transform;
-        vc.m_Follow = knight;
+        Transform player = GameManager.instance.player.transform;
+        vc.m_Follow = player;
     }
 
 }

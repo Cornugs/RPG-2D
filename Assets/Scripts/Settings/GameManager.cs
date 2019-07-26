@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public Transform knightSpawnPoint;
-    public GameObject knight;
+    public GameObject player;
     public static GameManager instance { get; private set; }
 
     private void Awake()
@@ -19,8 +19,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        knight = GameObject.FindGameObjectWithTag("Knight");
-        knight.transform.position = knightSpawnPoint.position;
+        player = GameObject.FindGameObjectWithTag("Player");
+        player.transform.position = knightSpawnPoint.position;
     }
 
 }
