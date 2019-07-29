@@ -120,6 +120,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &57723922 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7360509409274689540, guid: d614424185120b044b13484c84ef231e,
+    type: 3}
+  m_PrefabInstance: {fileID: 7360509408946901375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &57723923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57723922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498ec274a9e7f544e97280ba50e97526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &232332685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -963,5 +981,40 @@ PrefabInstance:
       propertyPath: experience
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7360509409274689539, guid: d614424185120b044b13484c84ef231e,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360509409274689539, guid: d614424185120b044b13484c84ef231e,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360509409274689539, guid: d614424185120b044b13484c84ef231e,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360509409274689539, guid: d614424185120b044b13484c84ef231e,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360509409274689539, guid: d614424185120b044b13484c84ef231e,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360509409274689539, guid: d614424185120b044b13484c84ef231e,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6687797860212554014, guid: d614424185120b044b13484c84ef231e,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c6c175fceabfd3b4bbee9a2a721394e2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d614424185120b044b13484c84ef231e, type: 3}

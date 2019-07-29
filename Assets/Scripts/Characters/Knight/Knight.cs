@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class Knight : Enemy
 {
+    private InputEnemy input;
+
     private void Start()
     {
-        IntroduceYourselfPolitely();
+        input = GetComponent<InputEnemy>();
+        PresentPolitely();
+    }
+
+    private void Update()
+    {
+        transform.position += (Vector3)input.DirectionToPlayer * attribute.speed * Time.deltaTime;
     }
 }

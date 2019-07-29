@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public string myName;
     public int experience;
 
-    protected void IntroduceYourselfPolitely()
+    protected void PresentPolitely()
     {
         Debug.Log("Hello, I'm " + myName);
     }
