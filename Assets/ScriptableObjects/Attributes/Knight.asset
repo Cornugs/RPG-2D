@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1bfa3de4f98ad647b6eaffeb729966d, type: 3}
   m_Name: Knight
   m_EditorClassIdentifier: 
-  speed: 5
-  attack: 5
+  speed: 1
+  attack: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InputEnemy : MonoBehaviour
 {
-    private Transform player;
+    public Transform player;
     public Vector2 DirectionToPlayer { get; private set; }
     public float Horizontal
     {
@@ -20,7 +20,7 @@ public class InputEnemy : MonoBehaviour
             return DirectionToPlayer.y;
         }
     }
-    public float Distance
+    public float DistancePlayer
     {
         get
         {
@@ -31,12 +31,17 @@ public class InputEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameManager.instance.player.transform;
+        DefineDirectionToPlayer();
     }
 
     // Update is called once per frame
     void Update()
     {
-        DirectionToPlayer = player.position - transform.transform.position;
+        DefineDirectionToPlayer();
+    }
+
+    private void DefineDirectionToPlayer()
+    {
+        DirectionToPlayer = player.position - transform.position;
     }
 }

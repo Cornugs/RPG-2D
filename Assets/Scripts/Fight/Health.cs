@@ -18,7 +18,10 @@ public class Health : MonoBehaviour
                 currentHealth = baseHealth;
             } else {
                 currentHealth = 0;
-                Destroy(gameObject);
+                if (onDie != null)
+                {
+                    onDie.Invoke();
+                }
             }
         }
     }
@@ -32,5 +35,10 @@ public class Health : MonoBehaviour
     public void ModifyCurrentHealth(int quantify)
     {
         CurrentHealth += quantify;
+    }
+
+    private void DestroyGameObject()
+    {
+        Destroy(gameObject);
     }
 }
