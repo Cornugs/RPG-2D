@@ -44,8 +44,7 @@ public class Knight : Enemy
             if (!attacking && input.DistancePlayer < attackDistance)
             {
                 PerformAttack();
-            }
-            else if (!attacking && (inFight || input.DistancePlayer < detectionDistance)) {
+            } else if (!attacking && (inFight || input.DistancePlayer < detectionDistance)) {
                 MoveToPlayer();
             }
         }
